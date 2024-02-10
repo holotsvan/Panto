@@ -1,0 +1,17 @@
+.read-more {
+  text-align: center;
+  color: var(--accent);
+  line-height: 185%;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  &::after {
+    content: url("./../icons/arrow-right-yellow.svg");
+    height: 24px;
+  }
+  &--big{
+    font-size: 18px;
+  }
+}

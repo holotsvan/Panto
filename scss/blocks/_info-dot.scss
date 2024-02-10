@@ -1,0 +1,46 @@
+.info-dot {
+  position: relative;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transition: background ease 0.2s;
+  }
+
+  &__radius {
+    width: 32px;
+    height: 32px;
+
+    border: 0.86px solid #fff;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+
+    animation: pulse 1s infinite alternate;
+  }
+
+  &:hover &__radius {
+    animation: pulse 1s infinite alternate paused;
+  }
+
+  &:hover &__circle {
+    background-color: var(--accent);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
