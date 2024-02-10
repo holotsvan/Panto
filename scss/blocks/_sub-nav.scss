@@ -1,0 +1,16 @@
+.sub-nav {
+  padding: 15px 25px;
+  display: grid;
+  gap: 16px;
+  border-radius: 16px;
+  background-color: var(--footer-bg);
+  color: #fff;
+  font-size: 14px;
+  a {
+    transition: color 0.1s ease-in;
+    color: #fff;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}

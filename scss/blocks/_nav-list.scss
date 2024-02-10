@@ -6,7 +6,44 @@
 
   align-self: center;
   justify-self: center;
-  
+
   font-weight: 500;
   font-size: 18px;
+}
+.nav-list__item {
+  position: relative;
+}
+.nav-list__link {
+  transition: opacity 0.1s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &::after {
+      content: url("./../icons/arrow-down.svg");
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.nav-list__sub-nav {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 160px;
+  left: 0%;
+  top:100%;
+  transition: all 0.4s ease-out;
+  transform: translate(0%, 50%);
+}
+
+.nav-list__item:hover .nav-list__sub-nav {
+  pointer-events: all;
+  transform: translate(0%, 0%);
+  opacity: 1;
 }
