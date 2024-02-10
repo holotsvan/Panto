@@ -3,16 +3,6 @@
 const infoButtons = document.querySelectorAll(".info-dot");
 const infoHints = document.querySelectorAll(".info-hint");
 const tabControls = document.querySelector(".tab-controls");
-const tabButtons = tabControls.querySelectorAll(".tab-controls__btn");
-
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    tabButtons.forEach((tab) =>
-      tab.classList.remove("tab-controls__btn--active")
-    );
-    button.classList.add("tab-controls__btn--active");
-  });
-});
 
 infoButtons.forEach((button) => button.addEventListener("click", toggleHint));
 
@@ -34,7 +24,7 @@ function toggleHint(e) {
 // initialize Swiper in JS:
 const swiper = new Swiper(".swiper", {
   loop: true,
-  freeMode:true,
+  freeMode: true,
   slidesPerView: 1,
   spaceBetween: 10,
 
@@ -44,18 +34,45 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".slider__button--prev ",
   },
 
-  breakpoints:{
-    640:{
+  breakpoints: {
+    640: {
       slidesPerView: 2,
       spaceBetween: 10,
     },
-    768:{
+    768: {
       slidesPerView: 3,
       spaceBetween: 10,
     },
-    1024:{
+    1024: {
       slidesPerView: 4,
       spaceBetween: 20,
+    },
+  },
+});
+
+// Tabs
+const tabButtons = document.querySelectorAll("[data-tab]");
+const tabsProducts = document.querySelectorAll("[data-tab-value]");
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remove for all buttons active class
+    tabButtons.forEach((button) =>
+      button.classList.remove("tab-controls__btn--active")
+    );
+
+    //Add active class to current button
+    this.classList.add("tab-controls__btn--active");
+
+    tabsProducts.forEach((product) => {
+      if (this.dataset.tab === product.dataset.tabValue) {
+        product.classList.remove("none");
+      } else {
+        product.classList.add("none");
+      }
     }
-  }
+    );
+
+    swiper.update();
+  });
 });
