@@ -6,6 +6,7 @@
   color: var(--header-text-color);
   @include retina-bg(url("./../img/header/header-bg@2x.jpg"));
 
+
   &__nav {
     margin-bottom: 86px;
   }
