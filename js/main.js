@@ -70,9 +70,23 @@ tabButtons.forEach((button) => {
       } else {
         product.classList.add("none");
       }
-    }
-    );
+    });
 
     swiper.update();
   });
 });
+
+// mobile-nav-wrapper--open
+
+//Mobile nav
+const mobileNavOpen = document.querySelector("#open-mobile-nav-btn");
+const mobileNavClose = document.querySelector("#close-mobile-nav-btn");
+const mobileNav = document.querySelector("#mobile-nav");
+
+mobileNavOpen.onclick = function () {
+  mobileNav.classList.add("mobile-nav-wrapper--open");
+};
+
+mobileNavClose.onclick = function () {
+  mobileNav.classList.remove("mobile-nav-wrapper--open");
+};

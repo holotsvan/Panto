@@ -146,6 +146,8 @@ body {
 }
 
 .header {
+  position: relative;
+  padding: 10px;
   background-color: var(--footer-bg);
   background-image: url("./../img/header/header-bg.jpg");
   background-size: cover;
@@ -452,7 +454,7 @@ body {
 }
 
 .products {
-  padding: 50px 0;
+  padding: 50px;
   background-color: #f7f7f7;
 }
 
@@ -750,6 +752,14 @@ body {
   color: var(--footer-text-color);
   background-color: var(--footer-bg);
   display: none;
+  z-index: 10;
+}
+.mobile-nav-wrapper a {
+  color: var(--footer-text-color);
+  transition: opacity 0.3s ease;
+}
+.mobile-nav-wrapper a:hover {
+  opacity: 0.9;
 }
 .mobile-nav-wrapper--open {
   display: block;
