@@ -134,7 +134,7 @@ body {
 
 .container {
   max-width: 1310px;
-  padding: 0 15;
+  padding: 0 15px;
   margin: 0 auto;
 }
 .container--small {
@@ -147,7 +147,7 @@ body {
 
 .header {
   position: relative;
-  padding: 10px;
+  padding: 10px 0;
   background-color: var(--footer-bg);
   background-image: url("./../img/header/header-bg.jpg");
   background-size: cover;
@@ -435,7 +435,7 @@ body {
 }
 
 .benefits {
-  padding: 120px 0;
+  padding: clamp(60px, 2.5rem + 5.4vw, 120px) 0px;
 }
 
 .benefits__grid {
@@ -443,10 +443,21 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+@media (max-width: 992px) {
+  .benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(30px, 0.98rem + 4.4vw, 60px);
+  }
+}
+@media (max-width: 629px) {
+  .benefits__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .benefits__title {
   max-width: 260px;
-  font-size: 42px;
+  font-size: clamp(32px, 1.7rem + 1.5vw, 42px);
   font-weight: 700;
 }
 

@@ -1,13 +1,20 @@
 .benefits {
-  padding: 120px 0;
+  padding: clamp(60px,2.5rem + 5.4vw,120px) 0px;
 }
 .benefits__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  @include tablet(){
+    grid-template-columns: repeat(2,1fr);
+    gap: clamp(30px,.98rem + 4.4vw,60px)
+  }
+  @include mobile(){
+    grid-template-columns: repeat(1,1fr);
+  }
   gap: 20px;
 }
 .benefits__title {
   max-width: 260px;
-  font-size: 42px;
+  font-size: clamp(32px,1.7rem + 1.5vw,42px);
   font-weight: 700;
 }

@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  padding: 10px;
+  padding: 10px 0;
   background-color: var(--footer-bg);
   background-image: url("./../img/header/header-bg.jpg");
   background-size: cover;
@@ -38,7 +38,7 @@
   &__search {
     display: inline-block;
     margin: 45px auto 0 auto;
-    @include mobile-xl(){
+    @include mobile-xl() {
       display: none;
     }
   }
@@ -52,7 +52,7 @@
 .header {
   &__dot {
     position: absolute;
-    
+
     @include mobile-xl() {
       display: none;
     }
