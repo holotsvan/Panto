@@ -8,9 +8,8 @@
   color: var(--header-text-color);
   @include retina-bg(url("./../img/header/header-bg@2x.jpg"));
 
-
   &__nav {
-    margin-bottom: 86px;
+    margin-bottom: clamp(24px, 0.07rem + 5.9vw, 86px);
   }
 
   &__content {
@@ -18,7 +17,8 @@
   }
 
   &__content p {
-    font-size: 24px;
+    font-size: clamp(16px, 0.85rem + 0.71vw, 24px);
+    text-wrap: balance;
     line-height: 160%;
     max-width: 606px;
     margin: 0 auto;
@@ -27,7 +27,8 @@
 
   &__title {
     margin-bottom: 14px;
-    font-size: 80px;
+    text-wrap: balance;
+    font-size: clamp(28px, 0.82rem + 4.6vw, 80px);
     font-weight: 700;
     line-height: 130%;
     letter-spacing: -0.8px;
@@ -35,7 +36,11 @@
   }
 
   &__search {
+    display: inline-block;
     margin: 45px auto 0 auto;
+    @include mobile-xl(){
+      display: none;
+    }
   }
 
   a {
@@ -45,34 +50,35 @@
 
 // DOTS
 .header {
-  &__dot-sofa {
+  &__dot {
     position: absolute;
-    left: calc(296 * 100% / 1440);
-    top: calc(685 * 100% / 1084);
-    transform: translate(0%, 0%);
-  }
+    
+    @include mobile-xl() {
+      display: none;
+    }
 
-  &__dot-vase {
-    position: absolute;
-    left: calc(114 * 100% / 1440);
-    top: calc(754 * 100% / 1084);
-    transform: translate(-50%, -50%);
+    &--sofa {
+      left: calc(296 * 100% / 1440);
+      top: calc(685 * 100% / 1084);
+      transform: translate(0%, 0%);
+    }
 
-  }
+    &--vase {
+      left: calc(114 * 100% / 1440);
+      top: calc(754 * 100% / 1084);
+      transform: translate(-50%, -50%);
+    }
 
-  &__dot-item {
-    position: absolute;
-    left: calc(810 * 100% / 1440);
-    top: calc(787 * 100% / 1084);
-    transform: translate(-50%, -50%);
+    &--item {
+      left: calc(810 * 100% / 1440);
+      top: calc(787 * 100% / 1084);
+      transform: translate(-50%, -50%);
+    }
 
-  }
-
-  &__dot-wall {
-    position: absolute;
-    right: calc(47 * 100% / (1440 - 30));
-    top: calc(821 * 100% / (1084 - 9));
-    transform: translate(-50%, -50%);
-
+    &--wall {
+      right: calc(47 * 100% / (1440 - 30));
+      top: calc(821 * 100% / (1084 - 9));
+      transform: translate(-50%, -50%);
+    }
   }
 }
