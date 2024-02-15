@@ -14,6 +14,14 @@
 }
 .products__slider {
   margin-bottom: 60px;
+
+  @include desktop-small() {
+    padding: 0 40px;
+  }
+
+  @include mobile() {
+    padding: 0 20px;
+  }
 }
 .products__link {
   text-align: center;

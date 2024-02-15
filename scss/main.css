@@ -496,6 +496,16 @@ body {
 .products__slider {
   margin-bottom: 60px;
 }
+@media (max-width: 1400px) {
+  .products__slider {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 629px) {
+  .products__slider {
+    padding: 0 20px;
+  }
+}
 
 .products__link {
   text-align: center;
